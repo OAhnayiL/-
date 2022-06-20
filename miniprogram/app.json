@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/search/search",
+    "pages/kindInfo/kindInfo",
+    "pages/answer/answer",
+    "pages/result/result",
+    "pages/user/user",
+    "pages/camera/index",
+    "pages/record/index",
+    "pages/paper/paper",
+    "pages/look/look",
+    "pages/paperSC/index"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3CB371",
+    "navigationBarTitleText": "垃圾分类",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "backgroundColor": "#3cb371",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "/images/分类1.png",
+        "selectedIconPath": "/images/分类0.png",
+        "text": "分类"
+      },
+      
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/images/用户1.png",
+        "selectedIconPath": "/images/用户0.png",
+        "text": "用户"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.1",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

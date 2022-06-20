@@ -1,0 +1,41 @@
+<!--miniprogram/pages/answer/answer.wxml-->
+<view class="view_main">
+
+<view wx:if="{{itemList==null}}" class="view_first" >
+
+	<image class="image_style" src="../../images/kaoshi.png" mode="widthFix" /> {{item.text}}
+	<view class="view_button" bindtap="onclick">
+		开始测试
+	</view>
+
+</view>
+
+
+	<!-- 选项 -->
+	<view wx:if="{{itemList!=null}}" class="view_options">
+
+		<view class="view_title">{{itemList[answerIndex]._name}}</view>
+
+		<view style="width:95%;margin-left:40rpx;margin-top:20rpx;font-size:14px;">
+			从下列选出正确答案:
+		</view>
+
+		<view class="view_kinds">
+
+			<view class="view_kind" wx:for="{{kinds}}" wx:key="item" data-correct="{{item.text}}" bindtap="clickAnswer">
+
+				<view class="view_type">
+					<view class="view_kindItem" style="background:{{item.color}};">
+						<image class="image_kind" src="{{item.imgPath}}" mode="aspectFit" /> {{item.text}}
+					</view>
+				</view>
+
+			</view>
+
+		</view>
+
+		<view class="view_count">第{{answerIndex+1}}题/共10题</view>
+
+	</view>
+
+</view>

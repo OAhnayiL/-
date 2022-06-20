@@ -1,0 +1,20 @@
+<!--miniprogram/pages/look/look.wxml-->
+<view class="view_main">
+  <view class="view_head">
+    <view style="font-weight: bold">
+      {{paper.title}}
+    </view>
+  </view>
+  <view class="view_body">
+    {{paper.content}}
+  </view>
+
+  <view class="view_head" style="margin-top:30rpx;">
+    <view>
+      <image src="{{!scItem?'../../images/sc0.png':'../../images/sc1.png'}}" style="width: 80rpx; height: 80rpx;" mode="widthFix" bindtap="clickSC"/>
+    </view>
+    <view>
+      {{paper.time}}
+    </view>
+  </view>
+</view>

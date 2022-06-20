@@ -1,0 +1,15 @@
+<!--miniprogram/pages/record/record.wxml-->
+<view class="view_main">
+
+  <view class="view_recordTxt">
+
+    <view class="view_txt" wx:if="{{currentText==null}}" style="color:darkgray;">等待语音识别...</view>
+    <view class="view_txt" wx:if="{{currentText!=null}}" style="">{{currentText}}</view>
+    <!-- <input name="search" value="{{currentText}}" bindconfirm='doClick' type='text' confirm-type='search' class="input_type" placeholder="等待语音识别..." bindinput="getInput"></input> -->
+  </view>
+
+  <view class="view_recordBtn" catchtouchstart="streamRecord" catchtouchend="endStreamRecord">
+    <image src="../../images/luyin.png" style="width: 120rpx;height:120rpx;" mode="widthFix" />
+  </view>
+
+</view>

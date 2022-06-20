@@ -1,0 +1,24 @@
+/* miniprogram/pages/look/look.wxss */
+.view_main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.view_head{
+  margin-top: 5rpx;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view_body{
+  width: 95%;
+  margin-top: 15rpx;
+  font-size: 15px;
+}

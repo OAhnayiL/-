@@ -1,0 +1,61 @@
+<!--miniprogram/pages/search/search.wxml-->
+<view class="view-main">
+  <!-- 搜索框体-->
+  <view class="view-input-type">
+    <input name="search" value="{{inputTxt}}" bindconfirm='doClick' type='text' confirm-type='search' class="input_type"
+      placeholder="请输入物品关键字" bindinput="getInput"></input>
+    <image class="image_search_type" src="../../images/sousuo.png" mode="aspectFit" bindtap="doClick"></image>
+  </view>
+
+  <!-- 显示热门搜索 -->
+  <view class="view_show">
+    <!-- <view wx:if="{{inputTxt==null}}" class="view_info_title">
+      <text style="width: 50%;font-size:15px;">热门搜索：</text>
+      <text style="width: 50%;font-size:15px;text-align:right;"></text>
+    </view> -->
+
+    <!-- 显示搜索提示信息 -->
+    <view wx:if="{{!searchItmes && inputTxt}}" style="color:red;font-size:12px">建议输入关键字，如"红色鼠标"请输入"鼠标"</view>
+
+    <!-- 热门搜索 -->
+    <!-- <view wx:if="{{inputTxt==null}}" class="view_info_txts">
+      <view class="view_info_txt" wx:for="{{hotSearchItems}}" wx:key="item" data-name="{{item._name}}"
+        bindtap="doClickHotItem">
+        {{item._name}}
+      </view>
+    </view> -->
+
+    <!-- 显示搜索项目 -->
+    <view wx:if="{{searchItmes!=null}}" class="view_search_show">
+      <view wx:for="{{searchItmes}}" wx:key="item" class="view_search_item" id="{{item._id}}" data-type="{{item._type}}"
+        data-name="{{item._name}}" bindtap="doClickItem">
+        <text class="text_search_item">{{item._name}}: {{item._type}}</text>
+        <view class="navigator-arrow"></view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 弹框显示搜索项目的详细信息 -->
+<modal hidden="{{isHiddenInfoModal}}" title="{{selectItem._txt}}" no-cancel="true" confirm-text="确定"
+  bindconfirm="modal_hidden" bindcancel="modal_hidden">
+  <view class="view_modal_main">
+
+    <button class="button_modal_kind" style="background:{{selectItem._type.color}};">
+      <image class="image_modal_kind" src="{{selectItem._type.imgPath}}" mode="aspectFit" /> {{selectItem._type.text}}
+    </button>
+
+    <view class="view_modal_info">
+
+      <view class="view_modal_info_title">
+        ✤投放要求:
+      </view>
+      <view wx:for="{{selectItem._type.dispose}}" wx:key="item" class="view_modal_info_txt">
+        ☞{{item}}
+      </view>
+
+    </view>
+
+  </view>
+</modal>

@@ -1,0 +1,23 @@
+<!--miniprogram/pages/result/result.wxml-->
+<view class="view_main">
+
+<view class="result_title">你的测试结果:{{score}}分</view>
+
+<view class="answer_list" wx:for="{{itemList}}" wx:key="item">
+  <view class="itemType">
+    {{item._name}}
+  </view>
+
+  <view class="itemType">
+    {{item._type}}
+  </view>
+
+  <view wx:if="{{item._type!=item._note}}" class="resultType0">
+    {{item._note}}
+  </view>
+
+  <view wx:if="{{item._type==item._note}}" class="resultType1">
+    {{item._note}}
+  </view>
+</view>
+</view>

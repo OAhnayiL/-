@@ -1,0 +1,17 @@
+<!--miniprogram/pages/paper/paper.wxml-->
+<view class="view_main">
+  <view wx:for="{{papers}}" wx:key="item" class="view_item" data-_id="{{item._id}}" bindtap="clickItem">
+    <view class="view_head">
+      <view style="font-weight: bold">
+        {{item.title}}
+      </view>
+    </view>
+    <view class="view_head">
+      <view>
+      </view>
+      <view style="font-weight: 100;  font-size: 12px;">
+        {{item.time}}
+      </view>
+    </view>
+  </view>
+</view>
